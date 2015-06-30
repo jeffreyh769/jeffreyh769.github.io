@@ -1,0 +1,245 @@
+.grid-items {
+  $action-color: $gray !default;
+  $base-background-color: white !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $grid-item-color: $gray;
+  $grid-item-height: 260px;
+  @include transition (all 0.2s ease-in-out);
+    
+  .grid-item {
+    @include transition (all 0.2s ease-in-out);
+    @include span-columns(12);
+    background: black;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    height: $grid-item-height;
+    margin-bottom: $gutter;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+
+    @include media($large-screen) {
+      @include span-columns(4);
+    }
+
+  }
+
+  .grid-item-hover {
+    top: -5px;
+  }
+  
+  .grid-item-last {
+    @include omega;
+  }
+
+  .grid-item-inside {
+    @include transition(all 400ms ease);
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    pointer-events: none;
+    opacity: 0;
+    margin-top: -20px;
+    // color: white;
+    z-index: 10;
+  }
+
+  .grid-text-on {
+    opacity: 1;
+    margin-top: 0;
+  }
+
+  .grid-item img {
+      display: block;
+      height: 3em;
+      margin-bottom: 1em;
+      margin: auto;
+      pointer-events: none;
+    }
+
+  .grid-item h1 {
+      font-size: em(18px);
+      letter-spacing: 0.01em;
+      margin-bottom: 0.4em;
+      pointer-events: none;
+    }
+
+  .grid-item p {
+      line-height: 1.5em;
+      margin: auto;
+      
+      @include media($medium-screen) {
+        max-width: 70%;
+        pointer-events: none;
+      }
+    }
+
+  .grid-item-big {
+    @include media($large-screen) {
+      @include span-columns(8);
+    }
+    p {
+      @include media($medium-screen) {
+        max-width: 60%;
+      }  
+    }
+  }
+}
+
+.grid-item-overlay {
+  @include transition(all 200ms ease);
+  display: block;
+  background-color: $yellow;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.overlay-on {
+  opacity: 0.7;
+}
+
+ // PROJECT OVERLAY //
+
+ .project-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  display: block;
+  opacity: 0;
+  background-color: rgba(black, 0.9);
+  pointer-events: none;
+  z-index: 200;
+  @include transition(all 800ms ease);
+  a {
+    color: rgba(white, 0.7) !important;
+    &:hover {
+      color: white !important;
+    }
+  }
+ }
+
+.project-overlay-show {
+  .project-overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+
+
+.project-load {
+  @include outer-container;
+  padding: 240px 20px 0 20px;
+  @media screen and (max-width: 700px) {
+    padding-top: 200px;
+  }
+  .project-element, .caption, .description {
+    margin-bottom: 100px;
+    margin-top: -3em;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all 800ms ease);
+    @media screen and (max-width: 700px) {
+    margin-bottom: 40px;
+  }
+  }
+  .caption {
+    @include span-columns(3);
+    font-size: em(14);
+    line-height: 0.78;
+    color: $yellow;
+    letter-spacing: 0.01em;
+    padding-left: 20px;
+    position: relative;
+    top: 6px;
+  @media screen and (max-width: 700px) {
+    @include span-columns(12);
+    padding: 0;
+  }
+  }
+  .description {
+    @include span-columns(7);
+    @include omega;
+    color: white;
+    letter-spacing: 0.05em;
+    font-weight: 100;
+  @media screen and (max-width: 700px) {
+    @include span-columns(12);
+  }
+  }
+}
+
+.project-loaded{
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-top: 0 !important;
+}
+
+.project-close {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    color: $yellow;
+    text-align: center;
+    position: fixed;
+    background-color: rgba($gray, 0.8);
+    z-index: 300;
+    // padding: 10px;
+    cursor: pointer;
+    i {
+      font-size: em(80px);
+    }
+  }
+
+.video-container {
+  @include span-columns(12);
+}
+
+.video { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  margin-bottom: 100px;
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%; 
+} 
+.video iframe, .video object, .video embed { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+}
+
+.vertical-column-image {
+  width: 49% !important;
+  height: auto !important;
+  float: left;
+}
+
+.vertical-column-1 {
+  margin-right: 2%;
+}
+
+.vertical {
+  width: auto;
+  height: 85vh;
+  display: block;
+  margin: 0 auto;
+}
+

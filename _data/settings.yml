@@ -1,0 +1,8 @@
+projects:
+- { name: Project 1 , folder: 'project-1', class: 'grid-item-big project-1', file: 'projects/project-1'  }
+- { name: Unbroken Book Cover , folder: 'project-2', class: 'grid-item-last project-2', file: 'projects/project-2'  }
+- { name: Kosmos Promotional Package , folder: 'project-3', class: 'project-3', file: 'projects/project-3'  }
+- { name: Project 4 , folder: 'project-4', class: 'project-4', file: 'projects/project-4'  }
+- { name: Project 5 , folder: 'project-5', class: 'grid-item-last project-5', file: 'projects/project-5'  }
+- { name: Project 6 , folder: 'project-6', class: 'grid-item-big project-6', file: 'projects/project-6'  }
+- { name: Project 7 , folder: 'project-7', class: 'grid-item-last project-7', file: 'projects/project-7'  }

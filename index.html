@@ -1,0 +1,13 @@
+---
+layout: index
+---
+<div class="grid-items">
+{% for project in site.data.settings.projects %}
+  <div class="grid-item {{ project.class }}" data-folder="{{ project.folder }}" style="background-image:url('/images/{{ project.folder }}/thumb.jpg');">
+    <div class="grid-item-overlay"></div>
+    <div class="grid-item-inside">
+      <h1 class="grid-item-title">{{ project.name }}</h1>
+    </div>
+  </div>
+{% endfor %}
+</div>
