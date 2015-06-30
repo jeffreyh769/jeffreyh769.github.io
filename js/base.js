@@ -96,7 +96,7 @@ function  workLoad() {
         newHTML = 'projects/'+ newFolder +'.html';
 
     $('.project-load').html(spinner).load(newHTML);
-    setTimeout(projectFade, 800);
+    setTimeout(projectFade, 1000);
   });
 }
 
