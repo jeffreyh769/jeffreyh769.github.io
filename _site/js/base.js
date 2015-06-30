@@ -87,7 +87,7 @@ function workHide(){
 }
 
 function  workLoad() {
-  $.ajaxSetup({ cache: false });
+  $.ajaxSetup({ cache: true });
   
   $('.grid-item').click(function() {
     var $this = $(this),
@@ -96,7 +96,7 @@ function  workLoad() {
         newHTML = 'projects/'+ newFolder +'.html';
 
     $('.project-load').html(spinner).load(newHTML);
-    setTimeout(projectFade, 400);
+    setTimeout(projectFade, 900);
   });
 }
 
