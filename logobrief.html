@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Jeffrey Herrera | Graphic Designer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="initial-scale=1">
+		<link type="text/css" rel="stylesheet" href="css/screen.css" />
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">    
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" language="javascript" src="js/randomcolor.js"></script>
+        <script type="text/javascript" language="javascript" src="js/fadein.js"></script>
+        <script type="text/javascript" language="javascript" src="js/neatshow.js"></script>
+        <script type="text/javascript" language="javascript" src="js/galleryhover.js"></script>
+        <script type="text/javascript" language="javascript" src="js/masonry.pkgd.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/png" href="img/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <aside>
+        	<a class="logolink" href="index.html"><img src="img/logo.png"></a>
+            <ul>
+                <li class="red"><a href="index.html">work</a></li>
+                <li class="red"><a href="index.html">about</a></li>
+                <li class="green"><a href="mailto:herrera.jeffrey@gmail.com">contact</a></li>
+                <br><br><br><br>
+                <li><a href="http://www.twitter.com/isthatjeff" target="_blank">twitter</a></li>
+                <li><a href="http://www.instagram.com/_isthatjeff" target="_blank">instagram</a></li>
+                <li><a href="http://www.pinterest.com/jeffreyherrera/" target="_blank">pinterest</a></li>
+                <li><a href="https://medium.com/@JeffHerrera" target="_blank">medium</a></li>
+            </ul>
+        </aside>
+        <main id="container">
+        <div class="work">
+          <iframe src="https://docs.google.com/forms/d/1OUZnEXZFlJJQIWKyAr10FVas1cDZZmw4VzFmQz9BxU4/viewform?embedded=true" width="100%" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        </div>
+        </main>
+        <script type="text/javascript">
+            var $container = $('#container').masonry();
+                $container.masonry({
+                "isFitWidth": true,
+                itemSelector: '.item'
+                    });
+            $container.imagesLoaded( function() {
+              $container.masonry();
+            });
+        </script>
+    </body>
+</html>

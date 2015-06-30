@@ -1,0 +1,333 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+@import "partials/normalize";
+@import "partials/base";
+@import "susy";
+@import "breakpoint";
+
+// Grid Defaults
+
+$susy: (
+	columns: 12,
+	math: fluid,
+	gutters: 0,
+);
+
+// Breakpoints
+
+//$small: max-width 768px;
+$medium: min-width 768px;
+$large: min-width 1024px;
+
+// Colors
+
+$brandblue: #00B6C2;
+$brandred: #F53E3E;
+$brandpurple: #B43A70;
+$brandgreen: #D6D64C;
+
+// Layout
+* html {
+height: 100%;
+box-sizing: border-box;
+}
+
+body {
+	@include container;
+	height: 100%;
+	font-size: 12px;
+	box-sizing: border-box;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	letter-spacing: .1em;
+	a{
+		@include brandtransition($seconds);
+		text-decoration: none;
+		color: $brandred;
+		letter-spacing: .1em;
+		display: inline-block;
+		padding: 2px;
+		border-bottom: 1px solid $brandblue;
+		cursor: pointer;
+		&:hover {
+			color: #2a2a2a;
+		}
+	}
+}
+
+.logolink {
+	text-decoration: none;
+	border: none;
+}
+
+aside {
+	@include container;
+	padding-top: 11%;
+	font-size: 12px;
+	text-align: center;
+	background-color: lighten(#eee, 3%);
+	border-right: 1px solid darken(#eee,4%);
+	height: 100%;
+	@include breakpoint($large){
+		@include span(2);
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	@include breakpoint($medium){
+		padding: 5%;
+	}
+	img{
+		width: 100px;
+        display: block;
+        float: left;
+	}
+	ul {
+		list-style: none;
+		display: block;
+		padding: 0;
+		@include breakpoint($large){
+			padding-top: 10%;
+		}
+		text-align: center;
+			li {
+				font-size: 1em;
+				a {
+					display: inline-block;
+					text-decoration: none;
+					// color: #2a2a2a;
+					padding: 5px;
+					@include brandtransition($seconds);
+					}
+				}
+		}
+
+	.resume{
+		text-align: center;
+		margin-top: 50px;
+	}
+
+	.social{
+		@include breakpoint($large){
+			position: absolute;
+			bottom: 0;
+		}
+		padding: 50px;
+		width: 100%;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: darken(#eee, 20%);
+			padding: 5px;
+			@include brandtransition($seconds);
+			&:hover {
+				color: $brandblue;
+			}
+		}
+		}
+
+}
+
+main {
+	@include container;
+		@include breakpoint($large){
+		@include span(10 at 3);
+		display: none;
+		height: 100%;
+		}
+		background-color: #fff;
+	.item {
+		width: 100%;
+        margin-bottom: 2.5%;
+        border: none;
+		position: relative;
+		overflow: hidden;
+		@include brandtransition($seconds);
+		@include breakpoint($medium){
+			width: 30%;
+			margin-left: 2.5%;
+			margin-bottom: 2.5%;
+			border: none;
+		    float: left;
+		}
+        @include breakpoint($large){
+            width: 22%;
+		    margin-left: 2.5%;
+		    margin-bottom: 2.5%;  
+		    float: left;  
+            border: none;
+        }
+	}
+	.img {
+		img {
+    		vertical-align: top;     /* Add this */
+    		min-width: 100%;
+		}
+	}
+}
+
+.cover {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	@include brandtransition(.8s);
+	.covertext {
+		@include center;
+		font-size: 12px;
+		text-align: center;
+		color: #FFF;
+		display: block;
+	}
+}
+
+// .item:hover .cover {
+//     transform: translateY(-100px);
+// }
+
+
+.view{
+	display: inline-block;
+	position: absolute;
+	margin: 0 auto;
+	bottom: -50px;
+	z-index: 1;
+	width: 100%;
+	padding: 10px;
+	background: $brandred;
+	color: #FFF;
+	text-decoration:none;
+	font-size: 12px;
+	border: none;
+	@include brandtransition(.9s);
+}
+
+.view:hover{
+	text-decoration: underline;
+	color: #fff;
+}
+
+// About
+
+
+
+.about {
+	@include container;
+	margin: 4% auto;
+    width: 75%;
+    height: 50%;
+	background: lighten(#eee, 2%);
+	a[href^="mailto"]:hover:after { content: " > " attr(title); }
+    img{
+        margin-bottom: 30px;
+        float: left;
+    }
+	p {
+		padding: 30px;
+	}
+	@include breakpoint($medium){
+	        width: 630px;
+	        height: 240px;
+            img {
+                float: left;
+                margin-right: 30px;
+                max-height: 100%;
+                display: inline-block;
+                }
+	}
+	@include breakpoint($large){
+	        width: 630px;
+	        height: 240px;
+            img {
+                float: left;
+                margin-right: 30px;
+                max-height: 100%;
+                display: inline-block;
+                }
+	}
+}
+
+
+//Work
+
+.work {
+	text-align: center;
+	margin-bottom: 10%;
+	.caption{
+		.captitle{
+			font-weight: bold;
+			color: $brandred;
+		}
+		text-align: left;
+        width: 100%;
+        margin-top: 50px;
+        padding: 0;
+		@include breakpoint($medium){
+		  width: 500px;
+		  margin: 4% auto;
+		}
+		background: lighten(#eee, 2%);
+		p {
+			padding: 30px;
+		}
+	}
+}
+
+.space {
+	height: 100px;
+	margin: 100px;
+}
+
+
+// Links
+
+.purple {
+	a {
+		width: 70px;
+		&:hover, &:active {
+			width: 70px;
+			background: $brandpurple;
+			color: #FFF;
+		}
+	}
+}
+
+.red {
+	a {
+		width: 70px;
+		&:hover {
+		width: 70px;
+			background: $brandred;
+			color: #FFF;
+		}
+	}
+}
+
+.blue {
+	a {
+		width: 70px;
+		&:hover {
+		width: 70px;
+			background: $brandblue;
+			color: #FFF;
+		}
+	}
+}
+
+.green {
+	a {
+		width: 70px;
+		&:hover {
+			width: 70px;
+			background: $brandgreen;
+			color: #FFF;
+		}
+	}
+}
